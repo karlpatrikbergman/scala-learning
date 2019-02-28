@@ -16,6 +16,6 @@ object AccessTokenUtil {
     case (null, _:String) => AccessTokenParamIsNullAndAccessTokenCookieIsSet
     case (_:String, _:String) => AccessTokenParamIsSetAndAccessTokenCookieIsSet
     case (null, null) => AccessTokenParamIsNullAndAccessTokenCookieIsNull
-    case (_, _) => "Unknown case"
+    //case (_, _) => "Unknown case"
   }
 }
