@@ -10,7 +10,7 @@ class FooTest extends FunSuite {
   test("Understanding Scala Future") {
 
     val fut = Future {
-      Thread.sleep(10000); 21 +21
+      Thread.sleep(10000)
       println("hej")
     }
     println(fut.isCompleted)
