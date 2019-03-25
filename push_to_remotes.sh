@@ -13,8 +13,15 @@
 # kpb	        https://karlpatrikbergman@github.com/karlpatrikbergman/scala-learning.git
 # ptrkbrgmn	    https://ptrkbrgmn@github.com/ptrkbrgmn/scala-learning.git
 
+# PUSHING TO MULTIPLE GIT REPOS (https://gist.github.com/rvl/c3f156e117e22a25f242)
+
+# Commands below will change the remote.origin.pushurl config entry. Now pushes will send to both of these destinations,
+# rather than the fetch URL.
+# git remote set-url --add --push origin https://karlpatrikbergman@github.com/karlpatrikbergman/scala-learning.git
+# git remote set-url --add --push origin https://ptrkbrgmn@github.com/ptrkbrgmn/scala-learning.git
+
 push_ptrkbrgmn() {
-  git push -u ptrkbrgmn --all
+  git push ptrkbrgmn --all
   git push ptrkbrgmn --tags
 }
 
