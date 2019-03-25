@@ -1,5 +1,5 @@
-class Foo(x: Int) {
-  println("Created Foo with value " + x)
-}
+import chapter6.Rational
 
-val foo = new Foo(0)
+val half = new Rational(1,2)
+val twoThirds = new Rational(2,3)
+val sum = half.add(twoThirds)

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+
+push_to_origin() {
+  local readonly URL="${1}"
+  echo "Setting remote url to ${URL}"
+  git remote set-url origin "${URL}"
+  git push -u origin --all
+  git push origin --tags
+}
+
+push_ptrkbrgmn() {
+  push_to_origin "https://ptrkbrgmn@github.com/ptrkbrgmn/scala-learning.git"
+}
+
+push_karlpatrikbergman() {
+  push_to_origin "https://karlpatrikbergman@github.com/karlpatrikbergman/scala-learning.git"
+}
+
+push_ptrkbrgmn
+push_karlpatrikbergman
