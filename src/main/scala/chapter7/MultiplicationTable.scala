@@ -6,7 +6,7 @@ class MultiplicationTable {
 
   def makeRowsSeq():IndexedSeq[String] =
     for(rowIndex <- 1 to 10) yield makeRow(rowIndex)
-  
+
   def makeRow(rowIndex: Int): String = makeRowSeq(rowIndex).mkString
 
   private def makeRowSeq(rowIndex: Int): IndexedSeq[String] =
