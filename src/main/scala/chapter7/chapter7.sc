@@ -1,7 +1,3 @@
-import java.io.File
-
-import scala.io.StdIn
-
 /**
   * Almost all of Scalas control structures result in a value
   * This makes it possible to skip temporary variables, and us val instead
