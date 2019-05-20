@@ -13,10 +13,22 @@
 //
 //
 
-def add(a: Int, b: Int, c: Int) = a + b + c
+//def add(a: Int, b: Int, c: Int) = a + b + c
+//
+//val f: Int => Int => Int => Int = (add _).curried
+//
+//val g = f(2)
+//val h = g(3)
 
-val f: Int => Int => Int => Int = (add _).curried
 
-val g = f(2)
-val h = g(3)
+case class Item(
+  id: Int,
+  name: String,
+)
+//
+val addString = Item.curried
+val foo = addString(0)
+val bar = foo("my item")
+println(bar)
+
 

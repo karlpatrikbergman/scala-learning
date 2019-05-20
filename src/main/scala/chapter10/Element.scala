@@ -11,4 +11,7 @@ abstract class Element {
   def width: Int = if (height == 0) 0 else contents(0).length // The width method returns the length of the first line, or if there are no lines in the element, returns zero
   // All methods above are are defined as "parameterless methods", which is the recommended way to define methods
   // when there are no parameters and the method access mutable state by only reading fields of the containing object
+
+
+  def above(that: Element): Element = new ArrayElement(this.contents ++ that.contents)
 }
