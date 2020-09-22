@@ -10,15 +10,18 @@ object MultipleFutures5 extends App {
   val startTime = time
 
   def longRunningCalculation(i: Int) = Future {
-    sleep(2000)
+    println("in longRunningCalculation() that takes 5s")
+    sleep(5000)
     i * 2
   }
 
   def longRunningUpperCase(s: String) = Future {
-    sleep(100)
+    println("in longRunningCalculation() that takes 1s")
+    sleep(1000)
     s.toUpperCase
   }
 
+  // Gör körs futures parallellt
   def twoLongRunningTasks() = async {
 
     val f1 = longRunningCalculation(10)
@@ -30,10 +33,20 @@ object MultipleFutures5 extends App {
     println(s"\nresult = $r1 $r2  (delta = $delta)")
   }
 
+// Här körs dom inte parallellt
+//  def twoLongRunningTasks() = async {
+//
+//    println(s"\nentering `awaits`: $delta")
+//    val r1 = await { longRunningCalculation(10) }
+//    val r2 = await { longRunningUpperCase("Patrik") }
+//
+//    println(s"\nresult = $r1 $r2  (delta = $delta)")
+//  }
+
   twoLongRunningTasks()
 
   // important for a little parallel demo: keep the jvm alive
-  sleep(3000)
+  sleep(8000)
 
   def delta = System.currentTimeMillis - startTime
   def time = System.currentTimeMillis
